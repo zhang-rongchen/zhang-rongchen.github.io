@@ -22,7 +22,7 @@
 html { width: 100%; box-sizing: border-box; font-size: 62.5%; background-color: #37474F; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; padding: 0; margin: 0; }
 
 /*setting up font sizes and base font family*/
-body { minheight: 100%; width: 100%; padding: 0; margin: 0; background-image: url("../assets/hero.jpg"); letter-spacing: 0.01em; line-height: 1.6; font-size: 1.5em; font-weight: 400; font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+body { minheight: 100%; width: 100%; padding: 0; margin: 0; background-image: url("../assets/hero.jpg"); letter-spacing: 0.02em; line-height: 2; font-size: 2em; font-weight: 400; font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .outer { height: 100%; width: 100%; background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, #37474F 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.3)), color-stop(100%, #37474F)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, #37474F 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, #37474F 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, #37474F 100%); /* IE10+ */ background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, #37474F 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#825b00',GradientType=0 ); /* IE6-9 */ }
 
@@ -362,7 +362,7 @@ h6 { font-size: 1.5rem; line-height: 1.6; letter-spacing: 0; }
 
 .site-header .wrapper { padding-top: 5em; padding-bottom: 2em; }
 
-.site-header .wrapper .site-title { text-decoration: none; color: #fff; font-size: 48px; font-weight: bold; text-transform: uppercase; }
+.site-header .wrapper .site-title { text-decoration: none; color: #fff; font-size: 54px; font-weight: bold; text-transform: uppercase; }
 
 .site-header .header-badge { border-radius: 50%; border: 12px #fff solid; height: 200px; width: 200px; background: url("../assets/home.svg") center center no-repeat #fff; background-size: 50px 50px; display: inline-block; margin-bottom: -140px; overflow: hidden; transition: 0.3s; }
 
