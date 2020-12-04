@@ -10,7 +10,7 @@ title: ZRC'S ZONE
 email: 1993.zrc@gmail.com
 description:  A virtual proof that I'm awesome
 <<<<<<< HEAD
-baseurl: "/zhang-rongchen.github.io" # the subpath of your site, e.g. /blog
+#baseurl: "/zhang-rongchen.github.io" # the subpath of your site, e.g. /blog
 =======
 #baseurl: "/zrc" # the subpath of your site, e.g. /blog
 >>>>>>> 701e0a7c0ab8164012d6ae1272ab3fba2e709234
