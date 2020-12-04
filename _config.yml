@@ -10,7 +10,7 @@ title: ZRC'S ZONE
 email: 1993.zrc@gmail.com
 description:  A virtual proof that I'm awesome
 #baseurl: "/zrc" # the subpath of your site, e.g. /blog
-url: "http://zhang-rongchen.github.io" # the base hostname & protocol for your site
+#url: "http://zhang-rongchen.github.io" # the base hostname & protocol for your site
 github_username:  zhang-rongchen
 
 # Build settings
