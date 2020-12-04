@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Work Utopa 2019/03 - today</title>
-  <meta name="description" content="A virtual proof that I'm awesome">
-
-  <link rel="stylesheet" href="/zhang-rongchen.github.io/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/zhang-rongchen.github.io/WorkUtopa/">
-  <link rel="alternate" type="application/rss+xml" title="ZRC'S ZONE" href="http://localhost:4000/zhang-rongchen.github.io/feed.xml">
-</head>
-
-
-  <body>
-      <div class="outer">
-        <header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="/zhang-rongchen.github.io/">ZRC'S ZONE</a>
-    
-  </div>
-
-  <div class="header-badge">
-    <a href="/zhang-rongchen.github.io/">
-        <img src="/zhang-rongchen.github.io/assets/headshot.jpg" />
-    </a>
-  </div>
-    
-</header>
-
-
-        <div class="page-content">
-          <div class="wrapper">
-            <article class="post card">
-<div class="card-content">
-  <header class="post-header">
-    <h1 class="post-title">Work Utopa 2019/03 - today</h1>
-  </header>
-
-  <div class="post-content">
-    <h1 id="company-introduction">Company Introduction</h1>
+I"<h1 id="company-introduction">Company Introduction</h1>
 
 <ul>
   <li><strong>UTOPA</strong> : also called ‘GaoWei Tech’ is subcompany, fully supported by <a href="http://www.gtlandplaza.com/">GTLAND</a> . GTLAND is a real estate company. It owns four large plazas in the very center of GuangZhou. However, with the change of real estate industry, it is in the urge to transform. It choosed the ‘AR’ (augmented reality) industry, to fully explore its plazaa.</li>
@@ -176,25 +131,4 @@
 <img src="images/test_result.PNG" width="60%" height="60%" />
 </div>
 
-
-  </div>
-    </div>
-</article>
-
-          </div>
-        </div>
-
-        <footer class="site-footer">
-
-  <div class="wrapper">
-
-    <span class="footer-heading">ZRC'S ZONE</span>
-
-  </div>
-
-</footer>
-
-      </div>
-  </body>
-  
-</html>
+:ET

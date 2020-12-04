@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>My Work In Utopa</title>
-  <meta name="description" content="A virtual proof that I'm awesome">
-
-  <link rel="stylesheet" href="/zhang-rongchen.github.io/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/zhang-rongchen.github.io/WorkUtopa/Diary/">
-  <link rel="alternate" type="application/rss+xml" title="ZRC'S ZONE" href="http://localhost:4000/zhang-rongchen.github.io/feed.xml">
-</head>
-
-
-  <body>
-      <div class="outer">
-        <header class="site-header">
-
-  <div class="wrapper">
-
-    <a class="site-title" href="/zhang-rongchen.github.io/">ZRC'S ZONE</a>
-    
-  </div>
-
-  <div class="header-badge">
-    <a href="/zhang-rongchen.github.io/">
-        <img src="/zhang-rongchen.github.io/assets/headshot.jpg" />
-    </a>
-  </div>
-    
-</header>
-
-
-        <div class="page-content">
-          <div class="wrapper">
-            <article class="post card">
-<div class="card-content">
-  <header class="post-header">
-    <h1 class="post-title">My Work In Utopa</h1>
-  </header>
-
-  <div class="post-content">
-    <p>Some of my work diary.</p>
+I"1<p>Some of my work diary.</p>
 
 <h2 id="20190917">2019/09/17</h2>
 
@@ -93,25 +48,4 @@ If I made ORBSLAM with IMU, I can also save the keyframes and all its points, th
 <a href="https://docs.qq.com/slide/DUlhFYVBYdUVVbElk">2020_04_创科实验室_工作汇总</a></p>
 
 <p><a href="../">BACK</a></p>
-
-  </div>
-    </div>
-</article>
-
-          </div>
-        </div>
-
-        <footer class="site-footer">
-
-  <div class="wrapper">
-
-    <span class="footer-heading">ZRC'S ZONE</span>
-
-  </div>
-
-</footer>
-
-      </div>
-  </body>
-  
-</html>
+:ET

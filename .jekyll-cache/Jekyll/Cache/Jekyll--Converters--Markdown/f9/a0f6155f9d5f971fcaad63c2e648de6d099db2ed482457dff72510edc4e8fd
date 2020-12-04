@@ -1,0 +1,56 @@
+I"�<p>My name is Zhang Rongchen. I have the following qualities:</p>
+
+<ul>
+  <li>I got a great brain</li>
+  <li>I’m extremely loyal to my family</li>
+</ul>
+
+<p>What else do you need?</p>
+
+<h2 id="education">Education</h2>
+
+<p><strong>2012-2016 Heilongjiang University of Science and Technology</strong></p>
+
+<div align="center">    
+<img src="../assets/HUST.jpg" />
+</div>
+
+<ul>
+  <li>I got my bachelor’s degree in the Electronic Information Engineering Department.</li>
+</ul>
+
+<p>Major Course</p>
+<ul>
+  <li>Arm Embedded Systems</li>
+  <li>Signals and Systems</li>
+  <li>Digital Signal Processing</li>
+  <li>Principle of Communication</li>
+  <li>Principle of Electric Circuits</li>
+</ul>
+
+<p><strong>2017-2020 Guangdong University of Technology</strong></p>
+
+<div align="center">    
+<img src="../assets/GDUT.jpg" />
+</div>
+
+<ul>
+  <li>I got my master’s degree in the Systems and Control Engineering Department.</li>
+</ul>
+
+<p>Major Course</p>
+<ul>
+  <li>Machine Learning</li>
+  <li>Pattern Recognition</li>
+  <li>Digital Image Processing</li>
+  <li>Computer Vision</li>
+  <li>Robotics</li>
+</ul>
+
+<h2 id="work-at-utopa-ar">Work at UTOPA-AR</h2>
+
+<ul>
+  <li><a href="../WorkUtopa/index">The abstract of my work</a>.</li>
+</ul>
+
+:ET
