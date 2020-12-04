@@ -1,0 +1,165 @@
+I"$<h1 id="company-introduction">Company Introduction</h1>
+
+<ul>
+  <li><strong>UTOPA</strong> : also called ‘GaoWei Tech’ is subcompany, fully supported by <a href="http://www.gtlandplaza.com/">GTLAND</a> . GTLAND is a real estate company. It owns four large plazas in the very center of GuangZhou. However, with the change of real estate industry, it is in the urge to transform. It choosed the ‘AR’ (augmented reality) industry, to fully explore its plazaa.</li>
+</ul>
+
+<div align="center">    
+<img src="images/gtland.jpg" width="70%" height="70%" />
+</div>
+
+<ul>
+  <li>
+    <p><strong>Team</strong> : we have dozen of algorithm engineers, major in Visual SLAM (simultaneous localization and mapping), Visual Deep Learning, and 3D Reconstruction. Support with a few dozens of employees working on Unity3d, and a few dozens working with server back-end. I am part of the algorithm group.</p>
+  </li>
+  <li>
+    <p><strong>My Work</strong> : I am fully charged of one major aspect (<strong>hand pose detection and estimation algorithm</strong>), and in the direction of two other parts (<strong>signle image based visual localization algorithm</strong>, and <strong>image retrievel and recongnition algorithm</strong>). The ‘productions’ of our group are SDKs could be used in Unity Android.</p>
+  </li>
+</ul>
+
+<div align="center">    
+<img src="images/demos.PNG" />
+</div>
+
+<h1 id="summary-and-backups">Summary and Backups</h1>
+
+<p>The three directions of my work. (updated 2020/08)</p>
+
+<h2 id="hand-pose-detection-and-estimation">Hand Pose Detection and Estimation</h2>
+<p>We use the CPM(Convolutional Pose Machine) and YOLOv3 base to develop a Hand Pose Detection and Estimation system, my job is to modificate the code of YOLOv3 and CPM to suit our project better.</p>
+<ul>
+  <li>We detect hand first(YOLOv3 part), and crop the hand region to estimate hand pose(CPM part).</li>
+  <li>In order to have a faster performance at mobile device, we use MobileNet to exchange the original backbone of YOLOv3 and CPM, cut off some branch of YOLOv3 head part which has little influence on detection accuracy.</li>
+  <li>A system to offer a result with higher frequence, which is realized using tracking. That means we only run detection and estimation when we lose tracking.</li>
+  <li>Encapsulate our algorithm as an SDK and deploy it to Unity Android.</li>
+</ul>
+
+<div align="center">    
+<img src="images/hand_det.gif" width="20%" height="20%" style="margin-right:30px" />
+<img src="images/hand_pose.gif" width="20%" height="20%" style="margin-right:30px" />
+<img src="images/hand_ar.gif" width="20%" height="20%" style="margin-right:30px" />
+</div>
+
+<p><strong>Work Flow</strong>:</p>
+
+<ul>
+  <li>Linux PC algorithm developments.</li>
+  <li>Andorid Native Java environment development, and test the algorithms.</li>
+  <li>Build Android Library, build corresponding Unity project.</li>
+  <li>Test and find problems.</li>
+</ul>
+
+<h2 id="marker-image-based-tracking">Marker image based tracking</h2>
+<p>We use ORB feature match based algorithm to do this job.</p>
+<ul>
+  <li>Single marker detection: we could realize a faster and more robust detection (using a Branch-and-Bound optimization structure).</li>
+  <li>Multi-marker tracking: based on optical flow tracking and a NCC patch match to refine.</li>
+  <li>Structed markers detection and tracking (‘structed’ means we have prior of the relative poses of the markers).</li>
+  <li>Randomly placed marker tracking system.
+    <ul>
+      <li>Place the markers randomly at the scene.</li>
+      <li>Using a offline reconstruction algorithm to find their relative poses.</li>
+      <li>Used the localized markers realize AR camera tracking within the scene.</li>
+    </ul>
+  </li>
+  <li>Cooperate with a third-party SLAM system. Particularly, our system (and the demo video) is a cooperation with ARCORE (from google), and we realize a basic demo which has the potentail to achieve Vuforia’s performance.</li>
+</ul>
+
+<div align="center">    
+<img src="images/tracking.gif" width="30.5%" height="30.5%" style="margin-right:30px" />
+<img src="images/tracking_ar.gif" width="50%" height="50%" />
+</div>
+
+<p><strong>Work Flow</strong>:</p>
+
+<ul>
+  <li>Same as the former one.</li>
+</ul>
+
+<h2 id="single-image-based-large-scene-localization">Single image based large scene localization</h2>
+<p>Our system is based on Colmap SFM system, but I have our own modification to make it work for our system.</p>
+
+<div align="center">    
+<img src="images/demos_server.PNG" width="80%" height="80%" />
+</div>
+
+<p><strong>Algorithm Part</strong>:</p>
+
+<ul>
+  <li>We have built a system to allow to use a third-party lidar device to help optimize our map.</li>
+  <li>We use a deep learning based feature detection algorithm to deal with the illumination changing(NetVLAD).</li>
+  <li>We are working with Deep learning based MVS methods. <a href="https://docs.qq.com/slide/DUndnS2pwbkRiQmZM">articles research</a> and  <a href="https://gitee.com/gggliuye/VIO/blob/master/DeepMVS/Result_show.ipynb">DeepMVS test</a></li>
+  <li>We have further developped an local version of the algorithm (which could run entirely in mobile phone, will with a small loss of robustness). <a href="https://vio.readthedocs.io/zh_CN/latest/ServerLocalization/LocalMap.html">Local Map</a></li>
+</ul>
+
+<div align="center">    
+<img src="images/garden.gif" width="60%" height="60%" />
+</div>
+
+<p><strong>Work Flow</strong>:</p>
+
+<ul>
+  <li>Linux Algorithm development.</li>
+  <li>C++ development, followed by Java implementation.</li>
+  <li>Build serve, and define interface.</li>
+  <li>Build Android server communication system, and the message encoder/decoder.</li>
+  <li>Build the corresponding Unity project.</li>
+</ul>
+
+<p><strong>Mapping Clouds</strong>:</p>
+
+<ul>
+  <li><a href="https://www.voxxlr.com/s/1594282119587">Colmap extremely large scene</a></li>
+</ul>
+
+<p><strong>Some Log</strong>:</p>
+
+<p><a href="ServerLocalization/">ServerLocalization</a></p>
+
+<p><strong>WebGL demo</strong>:</p>
+
+<p>(worked with my own effort)</p>
+<ul>
+  <li>First demo : use threejs to load and show a point cloud (which I encoded into json form).</li>
+  <li>Second demo : use threejs to show a computer vision algorithm based 3d reconstruction.
+<a href="../WEBGL/threejs">WebGL demo</a></li>
+</ul>
+
+<h2 id="other-computer-vision-stuff">Other Computer Vision stuff</h2>
+
+<p>Backups and Documents:</p>
+
+<ul>
+  <li><a href="https://gitee.com/gggliuye/Opencv_based_hand_detection">Hand Tracking Python</a> Use traditional Opencv Method and Deeplearning methods repectively for the task of hand detection.</li>
+</ul>
+
+<div align="center">    
+<img src="images/hand.PNG" width="80%" height="80%" />
+</div>
+
+<ul>
+  <li><a href="https://github.com/gggliuye/graph_based_image_segmentation">Probability Graph model based image segmentation</a> Use Probability Graph model based algorithm for a simple image segmentation task, a realization of GraphCut algorithm, and an example of L1 heuristic for filling missing data.</li>
+</ul>
+
+<div align="center">    
+<img src="images/image_pgm.jpg" width="80%" height="80%" />
+</div>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/gggliuye/LidarSlam">Lidar SLAM</a> : Try to realize an simple ICP based lidar odometry algorithm. And try an mapping algorithm using part of the result from SFM visual reconstrction. some clouds :<a href="https://www.voxxlr.com/s/1594283047256">RealSense lidar pop art</a> and <a href="https://www.voxxlr.com/s/1594283095264">RealSense lidar office</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/gggliuye/PointNetKitti">Point Net ++ Kitti Detection Test</a> : Using point cloud clustering algorithm for object detection, and using a Point Net++ network for object classification.</p>
+  </li>
+</ul>
+
+<div align="center">    
+<img src="images/test_result.PNG" width="60%" height="60%" />
+</div>
+
+<h2 id="diary">Diary</h2>
+<p>Some the develop diary.</p>
+
+<p><a href="Diary/">Diary</a></p>
+:ET
