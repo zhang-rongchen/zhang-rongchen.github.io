@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About Me
-permalink: /about/
 ---
 My name is Zhang Rongchen. I have the following qualities:
 
