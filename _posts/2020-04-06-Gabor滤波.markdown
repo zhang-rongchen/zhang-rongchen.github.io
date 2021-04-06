@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "Gabor滤波!"
+date:   2020-04-6 10:34:45 +0200
+categories: cv markdown
+---
+# 概述
+
+Gabor滤波，一个正弦波调制的高斯函数作为卷积核对图像进行卷积滤波，相当于对图像进行局部傅里叶变换，用于分析图像局部频域特征。
+
+Gabor滤波器的脉冲响应，可以定义为一个正弦波乘以高斯函数。空域点积在频域为卷积，因此Gabor滤波器的脉冲响应的傅立叶变换是正弦函数的傅立叶变换和高斯函数傅立叶变换的卷积。该滤波器由实部和虚部组成，二者相互正交。一组不同频率不同方向的Gabor函数数组对于图像特征提取非常有用。
+
+
+# 表达公式
+![image](https://img.jbzj.com/file_images/article/202010/20201026104511911.png?2020926104748)
+参数意义：
+波长(λ)：表示Gabor核函数中余弦函数的波长参数。它的值以像素为单位制定，通常大于等于2，但不能大于输入图像尺寸的1/5.
+
+方向(θ)：表示Gabor滤波核中平行条带的方向。有效值为从0°到360°的实数。
+
+相位偏移(ψ)：表示Gabor核函数中余弦函数的相位参数。它的取值范围为-180°到180°。其中，0°与180°对应的方程与原点对称，-90°和90°的方程关于原点成中心对称。
+
+长宽比(γ)：空间纵横比，决定了Gabor函数形状的椭圆率。当γ=1时，形状是圆形；当γ<1时，形状随着平行条纹方向而拉长。通常该值为0.5.
+
+带宽(b)：Gabor滤波器的半响应空间频率带宽b和σ/λ的比率有关，其中σ表示Gabor函数的高斯因子的标准差。
+
+# Python实现Gabor滤波器
+
+```
+# Gabor 滤波器实现
+# K_size：Gabor核大小 K_size x K_size
+# Sigma : σ
+# Gamma： γ
+# Lambda：λ
+# Psi ： ψ
+# angle： θ
+def Gabor_filter(K_size=111, Sigma=10, Gamma=1.2, Lambda=10, Psi=0, angle=0):
+    # get half size
+    d = K_size // 2
+ 
+    # prepare kernel
+    gabor = np.zeros((K_size, K_size), dtype=np.float32)
+ 
+    # each value
+    for y in range(K_size):
+        for x in range(K_size):
+            # distance from center
+            px = x - d
+            py = y - d
+ 
+            # degree -> radian
+            theta = angle / 180. * np.pi
+ 
+            # get kernel x
+            _x = np.cos(theta) * px + np.sin(theta) * py
+ 
+            # get kernel y
+            _y = -np.sin(theta) * px + np.cos(theta) * py
+ 
+            # fill kernel
+            gabor[y, x] = np.exp(-(_x**2 + Gamma**2 * _y**2) / (2 * Sigma**2)) * np.cos(2*np.pi*_x/Lambda + Psi)
+ 
+    # kernel normalization
+    gabor /= np.sum(np.abs(gabor))
+ 
+    return gabor
+```
+python做出不同角度Gabor滤波器的图像
+
+```
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+ 
+# Gabor 滤波器实现
+# K_size：Gabor核大小 K_size x K_size
+# Sigma : σ
+# Gamma： γ
+# Lambda：λ
+# Psi ： ψ
+# angle： θ
+def Gabor_filter(K_size=111, Sigma=10, Gamma=1.2, Lambda=10, Psi=0, angle=0):
+    # get half size
+    d = K_size // 2
+ 
+    # prepare kernel
+    gabor = np.zeros((K_size, K_size), dtype=np.float32)
+ 
+    # each value
+    for y in range(K_size):
+        for x in range(K_size):
+            # distance from center
+            px = x - d
+            py = y - d
+ 
+            # degree -> radian
+            theta = angle / 180. * np.pi
+ 
+            # get kernel x
+            _x = np.cos(theta) * px + np.sin(theta) * py
+ 
+            # get kernel y
+            _y = -np.sin(theta) * px + np.cos(theta) * py
+ 
+            # fill kernel
+            gabor[y, x] = np.exp(-(_x**2 + Gamma**2 * _y**2) / (2 * Sigma**2)) * np.cos(2*np.pi*_x/Lambda + Psi)
+ 
+    # kernel normalization
+    gabor /= np.sum(np.abs(gabor))
+ 
+    return gabor
+ 
+ 
+# define each angle
+As = [0, 45, 90, 135]
+ 
+# prepare pyplot
+plt.subplots_adjust(left=0, right=1, top=1, bottom=0, hspace=0, wspace=0.2)
+ 
+# each angle
+for i, A in enumerate(As):
+ # get gabor kernel
+ gabor = Gabor_filter(K_size=111, Sigma=10, Gamma=1.2, Lambda=10, Psi=0, angle=A)
+ 
+ # normalize to [0, 255]
+ out = gabor - np.min(gabor)
+ out /= np.max(out)
+ out *= 255
+  
+ out = out.astype(np.uint8)
+ plt.subplot(1, 4, i+1)
+ plt.imshow(out, cmap='gray')
+ plt.axis('off')
+ plt.title("Angle "+str(A))
+ 
+plt.savefig("out.png")
+plt.show()
+```
+![image](https://img.jbzj.com/file_images/article/202010/20201026104511916.png?2020926104748)
